@@ -1,0 +1,20 @@
+﻿<h3>Articles</h3>
+@page "/Articles"
+@inject RedakcniSystem1.Data.ApplicationDbContext db
+<div class="card-deck">
+    @foreach (var a in db.Articles)
+
+    {
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="@a.ImageUrl">
+            <div class="card-body">
+                <h5 class="card-title">@a.Title</h5>
+                <p class="card-text">@a.Content.Substring(0, 100);</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+}
+</div>
+@code {
+
+}
